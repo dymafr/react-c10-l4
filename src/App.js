@@ -1,10 +1,10 @@
-import React, { useRef, forwardRef } from 'react';
+import React, { useRef } from 'react';
 
-const MyInput = forwardRef((props, ref) => {
+const MyInput = ({ ref }) => {
   {
     return <input ref={ref} className="m-10" type="text" />;
   }
-});
+};
 
 function App() {
   const inputRef = useRef(null);
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center p-20">
-      <input ref={inputRef} className="m-10" type="text" />
+      <MyInput ref={inputRef} className="m-10" type="text" />
       <button className="btn btn-primary" onClick={handleClick}>
         Focus champ
       </button>
